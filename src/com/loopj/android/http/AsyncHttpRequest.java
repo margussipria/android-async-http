@@ -95,10 +95,10 @@ class AsyncHttpRequest implements Runnable {
                 makeRequest();
                 return;
             } catch (UnknownHostException e) {
-		        if(responseHandler != null) {
-		            responseHandler.sendFailureMessage(e, "can't resolve host");
-		        }
-	        	return;
+                if(responseHandler != null) {
+                    responseHandler.sendFailureMessage(e, "can't resolve host");
+                }
+                return;
             }catch (SocketException e){
                 // Added to detect host unreachable
                 if(responseHandler != null) {

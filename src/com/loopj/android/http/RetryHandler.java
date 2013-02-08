@@ -102,12 +102,12 @@ class RetryHandler implements HttpRequestRetryHandler {
     }
     
     protected boolean isInList(HashSet<Class<?>> list, Throwable error) {
-    	Iterator<Class<?>> itr = list.iterator();
-    	while (itr.hasNext()) {
-    		if (itr.next().isInstance(error)) {
-    			return true;
-    		}
-    	}
-    	return false;
+        Iterator<Class<?>> itr = list.iterator();
+        while (itr.hasNext()) {
+            if (itr.next().isInstance(error)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
